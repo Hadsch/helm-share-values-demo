@@ -1,0 +1,7 @@
+service1:
+  name: "My Service 1"
+  endpoint: "My Service 1 endpoint"
+
+service2:
+  name: "My Service 2"
+  endpoint: "My Service 2 endpoint"

@@ -1,0 +1,7 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: {{ .Release.Name }}-cfg-subchart01
+data:
+  name: {{ tpl .Values.name . }}
+  endpoint: {{ tpl .Values.endpoint . }}

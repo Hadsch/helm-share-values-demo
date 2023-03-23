@@ -1,0 +1,8 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: {{ .Release.Name }}-cfg-subchart-main
+data:
+  # Important: The values containing the template syntax. Therefore the template function is required to get the defined values in the global section.
+  name: {{ tpl .Values.service1.name . }}
+  endpoint: {{ tpl .Values.service1.endpoint . }}

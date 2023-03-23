@@ -1,0 +1,22 @@
+myValue: "{{ .Values.global.service1.name }}"
+
+global:
+  service1:
+    # Define name and endpoint for service1
+    name: "my-service-1 SHARED"
+    endpoint: "my-service-1-endpoint SHARED"
+  service2:
+    # Define name and endpoint for service1
+    name: "my-service-2"
+    endpoint: "my-service-2-endpoint"
+
+subchart-main:
+  service1:
+    # Pass the values from global.service1 to subchart-main as a "string" using the template syntax
+    name: "{{ .Values.global.service1.name }}"
+    endpoint: "{{ .Values.global.service1.endpoint }}"
+
+subchart01:
+  # Pass the values from global.service1 to subchart01 as a "string" using the template syntax
+  name: "{{ .Values.global.service1.name }}"
+  endpoint: "{{ .Values.global.service1.endpoint }}"
